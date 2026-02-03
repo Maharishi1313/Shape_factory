@@ -27,11 +27,11 @@ Run
 ```
 Supported Shapes
 
--circle
+- circle
 
--square
+- square
 
--rect
+- rect
 
 Note: Dimensions are optional. If provided, they are validated strictly.
 
@@ -57,8 +57,8 @@ Output
 ```bash
 A square has four sides that are of equal length.
 ```
-##❌ Invalid Input Handling
-
+---
+## ❌ Invalid Input Handling
 The program robustly handles invalid or inconsistent dimensions using exceptions.
 
 Examples
@@ -80,8 +80,9 @@ what(): Square requires exactly one positive side
 terminate called after throwing an instance of 'std::invalid_argument'
 what(): Rectangle requires exactly two positive sides
 ```
-##🧠 Code Overview
-###1️⃣ Base Class: shape
+---
+## 🧠 Code Overview
+### 1️⃣ Base Class: shape
 ```bash
 class shape {
  protected:
@@ -96,11 +97,11 @@ class shape {
   shape(string name) { Name = name; }
 };
 ```
--Abstract base class for all shapes
--Stores common attributes
--Enforces implementation of describe() via a pure virtual function
+- Abstract base class for all shapes
+- Stores common attributes
+- Enforces implementation of describe() via a pure virtual function
 
-###2️⃣ Derived Class Example: square
+### 2️⃣ Derived Class Example: square
 ```bash
 class square : public shape {
  public:
@@ -126,11 +127,11 @@ class square : public shape {
   }
 };
 ```
--Validates dimensions at construction time
--Computes area and perimeter only when dimensions are available
--Encapsulates all shape-specific logic
+- Validates dimensions at construction time
+- Computes area and perimeter only when dimensions are available
+- Encapsulates all shape-specific logic
 
-###3️⃣ Factory Class: ShapeFactory
+### 3️⃣ Factory Class: ShapeFactory
 ```bash
 class ShapeFactory {
  public:
@@ -160,11 +161,11 @@ class ShapeFactory {
   }
 };
 ```
--Centralized object creation
--Decouples main() from concrete shape implementations
--Makes the system easily extensible
+- Centralized object creation
+- Decouples main() from concrete shape implementations
+- Makes the system easily extensible
 
-###4️⃣ Main Function
+### 4️⃣ Main Function
 ```bash
 int main(int argc, char* argv[]) {
   string shape_name = argv[1];
@@ -186,21 +187,21 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 ```
--Parses command-line arguments
--Uses the factory to create shape objects
--Demonstrates runtime polymorphism
+- Parses command-line arguments
+- Uses the factory to create shape objects
+- Demonstrates runtime polymorphism
+---
+## 🌟 Design Highlights
 
-##🌟 Design Highlights
+- ✔️ **Follows the Open–Closed Principle**
+- ✔️ **Clean separation of concerns**
+- ✔️ **Robust exception handling**
+- ✔️ **Easy to extend with new shapes**
 
-✔️ Follows the Open–Closed Principle
-✔️ Clean separation of concerns
-✔️ Robust exception handling
-✔️ Easy to extend with new shapes
-
-##🔧 Extending the Project
+## 🔧 Extending the Project
 
 To add a new shape:
--Create a new class inheriting from shape
--Implement the describe() method
--Register the shape in ShapeFactory
--No changes to main() are required 🚀
+- Create a new class inheriting from shape
+- Implement the describe() method
+- Register the shape in ShapeFactory
+- No changes to main() are required 🚀
