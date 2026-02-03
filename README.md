@@ -193,15 +193,15 @@ int main(int argc, char* argv[]) {
 ---
 ## 🌟 Design Highlights
 
-- ✔️ **Follows the Open–Closed Principle**
-- ✔️ **Clean separation of concerns**
-- ✔️ **Robust exception handling**
-- ✔️ **Easy to extend with new shapes**
+- **Follows the Open–Closed Principle**
+- **Clean separation of concerns**
+- **Robust exception handling**
+- **Easy to extend with new shapes**
 
 ## 🔧 Extending the Project
 
 To add a new shape:
-- Create a new class inheriting from shape
-- Implement the describe() method
-- Register the shape in ShapeFactory
-- No changes to main() are required 🚀
+- **Create a new class inheriting from shape**
+- **Implement the describe() method**
+- **Register the shape in ShapeFactory**
+- **No changes to main() are required**
